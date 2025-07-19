@@ -1,4 +1,6 @@
-@use './font';
+@use './font.scss';
+@use './normalize.scss';
+@use './palette.scss';
 
 html {
     font-family: 'Inter';
