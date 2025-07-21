@@ -1,7 +1,10 @@
 @use './font.scss';
 @use './normalize.scss';
-@use './palette.scss';
 
 html {
     font-family: 'Inter';
+}
+
+body {
+    background-color: $color-base;
 }

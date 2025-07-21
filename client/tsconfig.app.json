@@ -27,7 +27,10 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
+			"@assets/*": ["src/assets/*"],
 			"@app/*": ["src/app/*"],
+			"@components/*": ["src/components/*"],
+			"@modules/*": ["src/modules/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@pages/*": ["src/pages/*"],
 		}
