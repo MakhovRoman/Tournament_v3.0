@@ -31,4 +31,24 @@ export default defineConfig({
 		},
 	},
 	base: '/',
+	server: {
+		watch: {
+			ignored: [
+				'**/node_modules/**',
+				'**/dist/**',
+				'**/.git/**',
+				'**/.vscode/**',
+				'**/.idea/**',
+			],
+		}
+	},
+	build: {
+		rollupOptions: {
+			output: {
+				manualChunks: {
+					antd: ['antd'],
+				}
+			}
+		}
+	}
 });
