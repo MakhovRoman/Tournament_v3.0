@@ -32,8 +32,8 @@
 			"@components/*": ["src/components/*"],
 			"@modules/*": ["src/modules/*"],
 			"@layouts/*": ["src/layouts/*"],
-			"@pages/*": ["src/pages/*"],
+			"@pages/*": ["src/pages/*"]
 		}
 	},
-	"include": ["src"],
+	"include": ["src"]
 }

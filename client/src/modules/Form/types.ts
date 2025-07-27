@@ -1,4 +1,4 @@
 export type Props = {
-    children: string;
-    titleSize?: TitleSize;
-}
+	children: string | React.ReactNode;
+	title: string;
+};

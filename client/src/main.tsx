@@ -1,10 +1,9 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
 import { router } from '@app/router';
 import { RouterProvider } from '@tanstack/react-router';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
 import '@/assets/styles/index.scss';
-
 
 const rootElement = document.getElementById('root');
 
