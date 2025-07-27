@@ -5,9 +5,9 @@ import { FormModule } from '@/modules/Form';
 export const LoginPage = () => {
 	return (
 		<AuthFormLayout>
-			<FormModule title="Login">
-				<ElemInput size="large" type="text" />
-				<ElemInput size="large" type="password" />
+			<FormModule title='Login'>
+				<ElemInput type='text' placeholder='Login' id='login'/>
+				<ElemInput type='password' placeholder='Password' id='password'/>
 			</FormModule>
 		</AuthFormLayout>
 	);

@@ -6,7 +6,7 @@ import type { Props } from './types';
 export const FormModule: React.FC<Props> = ({ children, title }) => {
 	return (
 		<div className={styles.form_layout}>
-			<Title titleSize="h1">{title}</Title>
+			<Title titleSize='h1'>{title}</Title>
 			{children}
 		</div>
 	);
