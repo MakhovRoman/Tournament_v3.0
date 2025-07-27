@@ -5,7 +5,4 @@ export type TitleProps = {
 	titleSize: TitleSize;
 };
 
-type TitleSize = Extract<
-	keyof JSX.IntrinsicElements,
-	`h${1 | 2 | 3 | 4 | 5 | 6}`
->;
+type TitleSize = Extract<keyof JSX.IntrinsicElements, `h${1 | 2 | 3 | 4 | 5 | 6}`>;

@@ -1,6 +1,6 @@
 import { Input } from 'antd';
-import type { ElemInputProps } from './types';
 import styles from './styles.module.scss';
+import type { ElemInputProps } from './types';
 
 export const ElemInput = ({
 	id,
