@@ -1,7 +1,8 @@
 import { fileURLToPath } from 'node:url';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import history from 'connect-history-api-fallback';
+import { type Connect, defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,6 +12,22 @@ export default defineConfig({
 			autoCodeSplitting: true,
 		}),
 		react(),
+		{
+			name: 'spa-fallback',
+			configureServer(server) {
+				server.middlewares.use(
+					history({
+						index: '/index.html',
+						verbose: true,
+						htmlAcceptHeaders: ['text/html'],
+						disableDotRule: true,
+						rewrites: [
+							{ from: /\/[^.]+$/, to: '/index.html' }, // Все пути без точек (не файлы)
+						],
+					}) as Connect.NextHandleFunction,
+				);
+			},
+		},
 	],
 	css: {
 		preprocessorOptions: {
@@ -33,22 +50,13 @@ export default defineConfig({
 	base: '/',
 	server: {
 		watch: {
-			ignored: [
-				'**/node_modules/**',
-				'**/dist/**',
-				'**/.git/**',
-				'**/.vscode/**',
-				'**/.idea/**',
-			],
-		}
+			ignored: ['**/node_modules/**', '**/dist/**', '**/.git/**', '**/.vscode/**', '**/.idea/**'],
+		},
+		fs: { allow: ['.'] },
 	},
-	build: {
-		rollupOptions: {
-			output: {
-				manualChunks: {
-					antd: ['antd'],
-				}
-			}
-		}
-	}
+	preview: {
+		headers: {
+			'Cache-Control': 'no-store',
+		},
+	},
 });

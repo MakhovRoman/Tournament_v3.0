@@ -1,6 +1,6 @@
-import { Link } from '@tanstack/react-router';
 import { ElemInput } from '@/components/form/ElemInput';
 import { AuthFormLayout } from '@/layouts/AuthForm';
+import { ActionButton } from '@/modules/ActionButton/ActionButton';
 import { FormModule } from '@/modules/Form';
 
 export const LoginPage = () => {
@@ -10,7 +10,7 @@ export const LoginPage = () => {
 				<ElemInput type='text' placeholder='Login' id='login' />
 				<ElemInput type='password' placeholder='Password' id='password' />
 			</FormModule>
-			<Link to='/register'>Register</Link>
+			<ActionButton label='Register' linkSource='/register' linkText='Sign Up' description="Don't have an account?" />
 		</AuthFormLayout>
 	);
 };

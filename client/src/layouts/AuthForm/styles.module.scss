@@ -1,3 +1,6 @@
 .auth_form {
     margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

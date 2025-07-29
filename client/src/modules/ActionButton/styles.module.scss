@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+
+    & span {
+        color: $color-secondary;
+    }
+}
