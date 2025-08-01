@@ -1,4 +1,4 @@
-import { ElemInput } from '@/components/form/ElemInput';
+import { ElemInput } from '@/components/form/Input';
 import { AuthFormLayout } from '@/layouts/AuthForm';
 import { FormModule } from '@/modules/Form';
 

@@ -1,0 +1,14 @@
+.button {
+    background-color: $color-accent;
+    color: $color-black;
+
+    &:hover {
+        background-color: $color-accent !important;
+        color: $color-black !important;
+        filter: brightness(1.2);
+    }
+
+    &:active {
+        filter: brightness(0.8);
+    }
+}

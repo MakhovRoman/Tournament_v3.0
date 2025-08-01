@@ -1,0 +1,22 @@
+.input {
+    background-color: $color-input-bg;
+    border: none;
+
+    &::placeholder {
+        color: $color-input-placeholder;
+    }
+
+    &:focus{
+        background-color: $color-input-bg !important;
+        filter: brightness(1.2);
+
+        &::placeholder {
+            color: transparent;
+        }
+    }
+
+    &:hover {
+        background-color: $color-input-bg !important;
+        filter: brightness(1.2);
+    }
+}
