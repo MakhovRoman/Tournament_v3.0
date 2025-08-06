@@ -18,13 +18,7 @@ export const ActionButton = ({
 
 	return (
 		<div className={styles.wrapper}>
-			<Button
-				label={label}
-				size={size}
-				disabled={disabled}
-				loading={loading}
-				onClick={onClick}
-			/>
+			<Button label={label} size={size} disabled={disabled} loading={loading} onClick={onClick} />
 			{(isLink || description) && (
 				<div className={styles.description}>
 					<span>{description}</span>

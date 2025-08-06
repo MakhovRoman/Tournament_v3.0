@@ -1,0 +1,30 @@
+@mixin setColumns($columns) {
+    grid-template-columns: 350px repeat($columns, 1fr);
+}
+.grid-2 { @include setColumns(2) }
+.grid-3 { @include setColumns(3) }
+.grid-4 { @include setColumns(4) }
+.grid-5 { @include setColumns(5) }
+
+@mixin setRows($rows) {
+    grid-template-rows: repeat($rows, 1fr);
+}
+.grid-rows-1 { @include setRows(1) }
+.grid-rows-2 { @include setRows(2) }
+.grid-rows-3 { @include setRows(3) }
+.grid-rows-4 { @include setRows(4) }
+.grid-rows-5 { @include setRows(5) }
+
+.draw {
+    &_wrapper {
+        width: 100%;
+        display: grid;
+    }
+
+    &_pairs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}

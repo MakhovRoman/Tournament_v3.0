@@ -1,15 +1,9 @@
 import { Button as AntdButton } from 'antd';
-import type { ButtonProps } from './types';
 import styles from './styles.module.scss';
+import type { ButtonProps } from './types';
 
-export const Button = ({
-	label,
-	size = 'large',
-    onClick,
-	disabled,
-	loading,
-}: ButtonProps) => {
-    return (
+export const Button = ({ label, size = 'large', onClick, disabled, loading }: ButtonProps) => {
+	return (
 		<AntdButton
 			className={styles.button}
 			type='primary'
@@ -20,5 +14,5 @@ export const Button = ({
 		>
 			{label}
 		</AntdButton>
-    )
-}
+	);
+};

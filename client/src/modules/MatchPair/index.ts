@@ -1,0 +1,1 @@
+export { MatchPairModule } from './MatchPairModule';

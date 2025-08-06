@@ -10,7 +10,7 @@ export const LoginPage = () => {
 				<Input type='text' placeholder='Login' id='login' />
 				<Input type='password' placeholder='Password' id='password' />
 			</FormModule>
-			<ActionButton label='Register' linkSource='/register' linkText='Sign Up' description="Don't have an account?" />
+			<ActionButton label='Log In' linkSource='/register' linkText='Sign Up' description="Don't have an account?" />
 		</AuthFormLayout>
 	);
 };

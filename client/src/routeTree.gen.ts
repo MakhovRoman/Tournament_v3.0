@@ -15,6 +15,8 @@ import { Route as IndexRouteImport } from './routes/index'
 
 const RegisterLazyRouteImport = createFileRoute('/register')()
 const LoginLazyRouteImport = createFileRoute('/login')()
+const DrawChar123drawIdChar125LazyRouteImport =
+  createFileRoute('/draw/{$drawId}')()
 
 const RegisterLazyRoute = RegisterLazyRouteImport.update({
   id: '/register',
@@ -31,35 +33,47 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DrawChar123drawIdChar125LazyRoute =
+  DrawChar123drawIdChar125LazyRouteImport.update({
+    id: '/draw/{$drawId}',
+    path: '/draw/{$drawId}',
+    getParentRoute: () => rootRouteImport,
+  } as any).lazy(() =>
+    import('./routes/draw/{$drawId}.lazy').then((d) => d.Route),
+  )
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginLazyRoute
   '/register': typeof RegisterLazyRoute
+  '/draw/{$drawId}': typeof DrawChar123drawIdChar125LazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginLazyRoute
   '/register': typeof RegisterLazyRoute
+  '/draw/{$drawId}': typeof DrawChar123drawIdChar125LazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/login': typeof LoginLazyRoute
   '/register': typeof RegisterLazyRoute
+  '/draw/{$drawId}': typeof DrawChar123drawIdChar125LazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/register'
+  fullPaths: '/' | '/login' | '/register' | '/draw/{$drawId}'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/register'
-  id: '__root__' | '/' | '/login' | '/register'
+  to: '/' | '/login' | '/register' | '/draw/{$drawId}'
+  id: '__root__' | '/' | '/login' | '/register' | '/draw/{$drawId}'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginLazyRoute: typeof LoginLazyRoute
   RegisterLazyRoute: typeof RegisterLazyRoute
+  DrawChar123drawIdChar125LazyRoute: typeof DrawChar123drawIdChar125LazyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -85,6 +99,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/draw/{$drawId}': {
+      id: '/draw/{$drawId}'
+      path: '/draw/{$drawId}'
+      fullPath: '/draw/{$drawId}'
+      preLoaderRoute: typeof DrawChar123drawIdChar125LazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -92,6 +113,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginLazyRoute: LoginLazyRoute,
   RegisterLazyRoute: RegisterLazyRoute,
+  DrawChar123drawIdChar125LazyRoute: DrawChar123drawIdChar125LazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
