@@ -7,6 +7,7 @@ export const drawList: Pick<MatchPairTypes, 'pair' | 'fightNumber' | 'toNextRoun
 			{ firstName: 'Alexey', lastName: 'Petrov', region: 'Stavropol', coach: 'Pupkov' },
 		],
 		fightNumber: 1,
+		toNextRound: true,
 	},
 	{
 		pair: [
@@ -14,6 +15,7 @@ export const drawList: Pick<MatchPairTypes, 'pair' | 'fightNumber' | 'toNextRoun
 			{ firstName: 'Nikita', lastName: 'Egorov', region: 'Krasnodar', coach: 'Smirnov' },
 		],
 		fightNumber: 2,
+		toNextRound: true,
 	},
 	{
 		pair: [
@@ -21,6 +23,12 @@ export const drawList: Pick<MatchPairTypes, 'pair' | 'fightNumber' | 'toNextRoun
 			{ firstName: 'Sergey', lastName: 'Orlov', region: 'Rostov', coach: 'Volkov' },
 		],
 		fightNumber: 3,
+		toNextRound: true,
+	},
+	{
+		pair: [{ firstName: 'Roman', lastName: 'Makhov', region: 'Stavropol', coach: 'Bubnov' }],
+		fightNumber: 1,
+		toNextRound: true,
 	},
 	{
 		pair: [

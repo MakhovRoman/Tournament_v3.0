@@ -1,0 +1,15 @@
+.drawCell {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0px;
+
+    &_space {
+        flex: 0.25 0 0px;
+        background-color: green;
+    }
+
+    &_line {
+        flex: 0.25 0 0px;
+        background-color: yellow;
+    }
+}

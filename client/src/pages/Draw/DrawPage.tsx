@@ -1,9 +1,11 @@
 import { clsx } from 'clsx/lite';
+import React from 'react';
 import { drawList } from '@/mocks/draw';
 import { MatchPairModule } from '@/modules/MatchPair';
 import { Route } from '@/routes/draw/{$drawId}.lazy';
 import { getDrawGrid } from '@/utils/draw';
 import styles from './styles.module.scss';
+import { DrawCell } from '@/components/draw/draw-cell';
 
 export const DrawPage = () => {
 	const { drawId } = Route.useParams();
@@ -48,17 +50,14 @@ export const DrawPage = () => {
 					);
 				})}
 			</div>
-			{getRoundsColumns(columns).map((item, index) => {
+			{getRoundsColumns(columns).map((item, roundIdx) => {
 				return (
-					<div className={styles.draw_rounds} key={index}>
-						{item.map((item, index) => {
+					<div className={styles.draw_rounds} key={roundIdx}>
+						{item.map((_, cellIdx) => {
+							const match = drawList[cellIdx];
 							return (
-								<div className={styles.draw_rounds_cell} key={index}>
-									<div className={styles.draw_rounds_cell_space}></div>
-									<div className={styles.draw_rounds_cell_line}></div>
-									<div className={styles.draw_rounds_cell_space}></div>
-									<div className={styles.draw_rounds_cell_line}></div>
-								</div>
+								<DrawCell roundIdx={roundIdx} cellIdx={cellIdx} match={match}
+								/>
 							);
 						})}
 					</div>
