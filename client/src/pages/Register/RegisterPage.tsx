@@ -13,7 +13,12 @@ export const RegisterPage = () => {
 				<Input type='password' placeholder='Password' id='password' />
 				<Input type='password' placeholder='Confirm Password' id='confirm_password' />
 			</FormModule>
-			<ActionButton label='Sign Up' linkSource='/login' linkText='Log in' description='Already have an account?' />
+			<ActionButton
+				label='Sign Up'
+				linkSource='/login'
+				linkText='Log in'
+				description='Already have an account?'
+			/>
 		</AuthFormLayout>
 	);
 };

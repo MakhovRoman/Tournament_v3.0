@@ -1,11 +1,11 @@
 import { clsx } from 'clsx/lite';
 import React from 'react';
+import { DrawCell } from '@/components/draw/draw-cell';
 import { drawList } from '@/mocks/draw';
 import { MatchPairModule } from '@/modules/MatchPair';
 import { Route } from '@/routes/draw/{$drawId}.lazy';
 import { getDrawGrid } from '@/utils/draw';
 import styles from './styles.module.scss';
-import { DrawCell } from '@/components/draw/draw-cell';
 
 export const DrawPage = () => {
 	const { drawId } = Route.useParams();
@@ -55,10 +55,7 @@ export const DrawPage = () => {
 					<div className={styles.draw_rounds} key={roundIdx}>
 						{item.map((_, cellIdx) => {
 							const match = drawList[cellIdx];
-							return (
-								<DrawCell roundIdx={roundIdx} cellIdx={cellIdx} match={match}
-								/>
-							);
+							return <DrawCell roundIdx={roundIdx} cellIdx={cellIdx} match={match} />;
 						})}
 					</div>
 				);
