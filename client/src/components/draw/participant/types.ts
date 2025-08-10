@@ -3,5 +3,4 @@ export type ParticipantType = {
 	lastName: string;
 	region: string;
 	coach: string;
-	isActive: boolean;
 };
