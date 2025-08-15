@@ -1,5 +1,4 @@
 import { clsx } from 'clsx/lite';
-import React from 'react';
 import { DrawCell } from '@/components/draw/draw-cell';
 import { drawList } from '@/mocks/draw';
 import { MatchPairModule } from '@/modules/MatchPair';
@@ -55,11 +54,12 @@ export const DrawPage = () => {
 					<div className={styles.draw_rounds} key={roundIdx}>
 						{item.map((_, cellIdx) => {
 							const match = drawList[cellIdx];
-							return <DrawCell roundIdx={roundIdx} cellIdx={cellIdx} match={match} />;
+							return <DrawCell roundIdx={roundIdx} cellIdx={cellIdx} match={match} key={cellIdx} />;
 						})}
 					</div>
 				);
 			})}
+			<div style={{ display: 'flex', flex: '1 0 0' }}>final</div>
 		</div>
 	);
 };
